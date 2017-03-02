@@ -1,0 +1,24 @@
+function verificaAutenticacao(req, res, next) {
+	if (req.isAuthenticated()) {
+		return next();
+	} else {
+		res.status('401').json('Não autorizado');
+	}
+}
+module.exports = function(app){
+	var index = app.controllers.index
+
+	app.get('/',function(req, res) {
+	var login = '';
+	if(req.user) {
+		console.log(req.user)
+		login = req.user.email;
+	}
+		res.render('index', { "usuarioLogado" : login});
+	});
+
+	app.get('/logout', function(req, res) {
+		req.logOut(); // exposto pelo passport
+		res.redirect('/');
+	});
+}
