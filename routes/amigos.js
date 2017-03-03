@@ -8,6 +8,6 @@ function verificaAutenticacao(req, res, next) {
 
 module.exports = function(app){
 	var amigos = app.controllers.amigos	
-	app.get("/amigos", amigos.index);
-	app.get("/amigos/:id", amigos.show);
+	app.get("/amigos", verificaAutenticacao, amigos.index);
+	app.get("/amigos/:id",verificaAutenticacao, amigos.show);
 }

@@ -9,7 +9,8 @@ angular.module("amigo").config(function($routeProvider){
 	});
 
 	$routeProvider.when("/amigos", {
-		templateUrl: "partials/amigos/index.ejs"
+		templateUrl: "partials/amigos/index.ejs",
+		controller: "AmigosController"
 	});
 
 

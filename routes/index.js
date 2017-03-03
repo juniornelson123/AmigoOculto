@@ -5,6 +5,7 @@ function verificaAutenticacao(req, res, next) {
 		res.status('401').json('Não autorizado');
 	}
 }
+var passport = require("passport")
 module.exports = function(app){
 	var index = app.controllers.index
 
@@ -25,4 +26,8 @@ module.exports = function(app){
 		req.logOut(); // exposto pelo passport
 		res.redirect('/');
 	});
+
+	app.post('/login', passport.authenticate('local', { failureRedirect: '/' }),function(req, res) {
+    res.redirect('/');
+  });
 }
