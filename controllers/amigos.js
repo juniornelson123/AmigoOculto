@@ -7,7 +7,7 @@ module.exports = function(app){
 				id = req.user._id
 			}
 			console.log(Amigo)
-			Amigo.find().exec().then(function(amigos){
+			Amigo.find().populate("usuario").exec().then(function(amigos){
 				res.json(amigos)
 			}, function(erro){
 				console.log(erro)

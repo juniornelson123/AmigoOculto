@@ -57,14 +57,14 @@
 </div><!-- /row -->
 <div class="col-lg-12 ds">
 <h3>Meus amigos secretos</h3>
-   <!--div ng-repeat="secrets"-->
+   <div ng-repeat="amigo in amigos">
 		<div class="desc">
 			<div class="thumb">
 				<img class="img-circle" src="/images/ui-divya.jpg" width="35px" height="35px" align="">
 			</div>
 			<div class="details">
-				<p><a href="#">DIVYA MANIAN</a><br/>
-				   <muted>Available</muted>
+				<p><a href="#">{{amigo.title}}</a><br/>
+				   <muted>{{amigo.usuario.nome}}</muted>
 				</p>
 			</div>
 			<div class="actions">
@@ -72,5 +72,5 @@
 				<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
 			</div>
 		</div>
-  <!--/div-->            	      	                   
+  </div>            	      	                   
 </div>	

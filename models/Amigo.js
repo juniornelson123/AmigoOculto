@@ -2,18 +2,25 @@ var mongoose = require("mongoose")
 var findOrCreate = require("mongoose-findorcreate")
 module.exports = function(){
 	var schema = mongoose.Schema({
-		nome:{
+		titulo:{
 			type: String,
 			required: true
 		},
+		pessoas: 
+			[{
+					nome:{
+					type: String,
+					required: true
+				},
 
-		email:{
-			type: String,
-			required: true,
-			index:{
-				unique: true
-			}
-		},
+				email:{
+					type: String,
+					required: true,
+					index:{
+						unique: true
+					}
+				}
+			}],
 
 		usuario:{
 			type: mongoose.Schema.ObjectId,
