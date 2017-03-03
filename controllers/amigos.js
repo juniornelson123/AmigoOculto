@@ -25,7 +25,12 @@ module.exports = function(app){
 		},
 
 		create:function(req,res){
-
+			req.body.usuario = req.user._id
+			Amigo.create(req.body).then(function(contato){
+				return res.json(contato)
+			}, function(erro){
+				res.status(500).json(erro)
+			})
 		},
 
 		delete: function(req, res){

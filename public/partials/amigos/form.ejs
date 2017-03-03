@@ -55,22 +55,31 @@
         </div><!-- /col-md-4 -->
                         
 </div><!-- /row -->
-<div class="col-lg-12 ds">
-<h3>Meus amigos secretos</h3>
-   <div ng-repeat="amigo in amigos">
-		<div class="desc">
-			<div class="thumb">
-				<img class="img-circle" src="/images/ui-divya.jpg" width="35px" height="35px" align="">
-			</div>
-			<div class="details">
-				<p><a href="#">{{amigo.title}}</a><br/>
-				   <muted>{{amigo.usuario.nome}}</muted>
-				</p>
-			</div>
-			<div class="actions">
-				<button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-				<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-			</div>
-		</div>
-  </div>            	      	                   
-</div>	
+
+<form class="form-horizontal style-form" method="post">
+	<div>	
+    <div class="form-group">
+        <label class="col-sm-2 col-sm-2 control-label">Nome</label>
+        <div class="col-sm-12">
+            <input type="text" class="form-control" ng-model="pessoa.nome">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 col-sm-2 control-label">Email</label>
+        <div class="col-sm-12">
+            <input type="text" class="form-control" ng-model="pessoa.email">
+        </div>
+    </div>
+
+    <div class="form-group">
+    	<div class="col-md-12 text-center">	
+        <button type="button" class="btn btn-primary">Adicionar mais amigos</button>
+        <button type="button" class="btn btn-success">Fechar amigo oculto</button>
+        <button type="button" class="btn btn-danger">Cancelar</button>
+    	</div>
+    </div>
+
+
+
+	</div>
+</form>    

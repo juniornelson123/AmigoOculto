@@ -10,4 +10,5 @@ module.exports = function(app){
 	var amigos = app.controllers.amigos	
 	app.get("/amigos", verificaAutenticacao, amigos.index);
 	app.get("/amigos/:id",verificaAutenticacao, amigos.show);
+	app.post("/amigos", verificaAutenticacao, amigos.create);
 }
