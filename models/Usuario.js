@@ -18,5 +18,5 @@ module.exports = function(){
 	})
 
 	schema.plugin(findOrCreate);
-	mongoose.model("Usuario", schema);
+	return mongoose.model("Usuario", schema);
 }

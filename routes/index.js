@@ -13,9 +13,15 @@ module.exports = function(app){
 	if(req.user) {
 		console.log(req.user)
 		login = req.user.email;
-	}
+				
 		res.render('index', { "usuarioLogado" : login});
+	}else{
+		res.render("login", {nome:	'Express'});
+		
+	}
 	});
+
+	app.get('/entrar',index.login);
 
 	app.get('/logout', function(req, res) {
 		req.logOut(); // exposto pelo passport
