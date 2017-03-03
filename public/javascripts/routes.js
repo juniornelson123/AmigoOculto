@@ -5,8 +5,7 @@ angular.module("amigo").config(function($routeProvider){
 	});
 
 	$routeProvider.when("/", {
-		templateUrl: "partials/login.ejs",
-		controller: "LoginController"
+		templateUrl: "partials/amigos/index.ejs"
 	});
 
 	$routeProvider.when("/amigos", {
@@ -14,5 +13,5 @@ angular.module("amigo").config(function($routeProvider){
 	});
 
 
-	$routeProvider.otherwise("/")
+	$routeProvider.otherwise("/amigos")
 })

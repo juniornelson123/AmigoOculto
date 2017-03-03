@@ -23,15 +23,15 @@
     
     <%- include header.ejs %>
 
-    <section id="container" >
-        <div ng-view></div>
+   <section id="main-content" class="container">
+        <section class="wrapper">
+            <div ng-view></div>
+        </section>
     </section>
 
     <script src="vendor/js/jquery.js"></script>
     <script type="text/javascript" src="vendor/js/jquery.backstretch.min.js"></script>
-    <script>
-        $.backstretch("images/login-bg.jpg", {speed: 500});
-    </script>
+    
     <script type="text/javascript" src="/vendor/angular/angular.js"></script>
     <script type="text/javascript" src="/vendor/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="/vendor/angular-resource/angular-resource.js"></script>
