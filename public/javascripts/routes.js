@@ -16,7 +16,7 @@ angular.module("amigo").config(function($routeProvider){
 
 	$routeProvider.when("/novo-amigo", {
 		templateUrl: "partials/amigos/form.ejs",
-		controller: "AmigosController"
+		controller: "NovoAmigoController"
 	});
 
 

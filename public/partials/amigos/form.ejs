@@ -1,5 +1,7 @@
       <div class="row mt">
+          
                       <!-- SERVER STATUS PANELS -->
+    <a href="#!/amigos">
     <div class="col-md-4 col-sm-4 mb">
             <div class="white-panel pn">
                 <div class="white-header">
@@ -15,24 +17,26 @@
                 </div>
             </div>
         </div><!-- /col-md-4 -->
-                
-
-        <div class="col-md-4 col-sm-4 mb">
-            <div class="white-panel pn">
-                <div class="white-header">
-                    <h5>Novo amigo secreto</h5>
-            </div>
-            
-            <div class="row">
-                
-                <div class="col-sm-6 col-xs-6"></div>
-      </div>
-                    <div class="centered">
-                    <img src="/images/product.png" width="120">
-                </div>
-            </div>
-        </div><!-- /col-md-4 -->
-                                
+      </a>          
+        <a href="#!/novo-amigo">
+	        <div class="col-md-4 col-sm-4 mb">
+	            <div class="white-panel pn">
+	                <div class="white-header">
+	                    <h5>Novo amigo secreto</h5>
+	            </div>
+	            
+	            <div class="row">
+	                
+	                <div class="col-sm-6 col-xs-6"></div>
+	      </div>
+	                    <div class="centered">
+	                    <img src="/images/product.png" width="120">
+	                </div>
+	            </div>
+	        </div><!-- /col-md-4 -->	
+        </a>
+        
+      <a ng-click="">       	                 	
         <div class="col-md-4 mb">
             <!-- WHITE PANEL - TOP USER -->
             <div class="white-panel pn">
@@ -53,33 +57,55 @@
                 </div>
             </div>
         </div><!-- /col-md-4 -->
+      </a>
                         
 </div><!-- /row -->
 
-<form class="form-horizontal style-form" method="post">
+<form name="form" class="form-horizontal style-form" method="post">
 	<div>	
     <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Nome</label>
         <div class="col-sm-12">
-            <input type="text" class="form-control" ng-model="pessoa.nome">
+            <input type="text" class="form-control" required ng-model="pessoa.nome">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Email</label>
         <div class="col-sm-12">
-            <input type="text" class="form-control" ng-model="pessoa.email">
+            <input type="text" class="form-control" required ng-model="pessoa.email">
         </div>
     </div>
 
     <div class="form-group">
     	<div class="col-md-12 text-center">	
-        <button type="button" class="btn btn-primary">Adicionar mais amigos</button>
-        <button type="button" class="btn btn-success">Fechar amigo oculto</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="adiciona(pessoa)">Adicionar mais amigos</button>
+        <button type="button" class="btn btn-success" ng-disabled="pessoas.length <= 0">Fechar amigo oculto</button>
+        <button type="button" class="btn btn-warning">Limpar tudo</button>
         <button type="button" class="btn btn-danger">Cancelar</button>
     	</div>
     </div>
 
-
-
 	</div>
+
+
 </form>    
+
+<div class="col-lg-12 ds">
+<h3>Amigos cadastrados</h3>
+   <div ng-repeat="pessoa in pessoas">
+		<div class="desc">
+			<div class="thumb">
+				<img class="img-circle" src="/images/ui-divya.jpg" width="35px" height="35px" align="">
+			</div>
+			<div class="details">
+				<p><a href="#">{{pessoa.nome}}</a><br/>
+				   <muted>{{pessoa.email}}</muted>
+				</p>
+			</div>
+			<div class="actions">
+				<button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+				<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o " ng-click="delete(pessoa)"></i></button>
+			</div>
+		</div>
+  </div>            	      	                   
+</div>	
